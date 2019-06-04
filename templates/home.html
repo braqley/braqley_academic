@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock title %}
+
+
+{% block content %}
+<p>Bradley Holland is a scholar based in Hawaii. <a href="{% url 'about' %}">  Read more... </a>
+</p>
+
+<p>He teaches courses on crime, justice, and politics at the University of Hawaii at Hilo.
+    <a href="{% url 'courses' %}">  Read more... </a>
+</p>
+
+<p>His research focuses on violence, collective action, and race.
+    <a href="{% url 'research' %}">  Read more... </a>
+</p>
+
+{% endblock content %}
