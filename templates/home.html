@@ -4,19 +4,32 @@
 
 
 {% block content %}
-<p>Bradley Holland is a scholar based in Hawaii. <a href="{% url 'about' %}">  Read more... </a>
+<div id="main_text">
+<p>Bradley Holland is a scholar based in Hawaii. He received a PhD and AM 
+    from the Government Department at Harvard University and a BA in 
+    Political Science and East Asian Studies from the University of Wisconsin.</p>
+<p> 
+    He works as an Assistant Professor at the University of Hawaii at Hilo, teaching <a class="courses_link" href="{% url 'courses' %}"> courses</a> on crime, justice,
+    and politics. His <a class="research_link" href="{% url 'research' %}">  research</a> focuses on
+    violence, collective action, and race. Click to view his 
+    <a class="cv_link" href="https://www.dropbox.com/s/hi82qfzz3k6p1o3/Holland_CV_060519.pdf?dl=0"> 
+    cv</a> and contact him at holland [dot] 
+    415 [at] osu [dot] edu.
+</p>
+</div>
+
+
+
+<!--  <p>He teaches <a href="{% url 'courses' %}">  courses</a> on crime, justice, and politics at the University of Hawaii at Hilo.
+    
 </p>
 
-<p>He teaches courses on crime, justice, and politics at the University of Hawaii at Hilo.
-    <a href="{% url 'courses' %}">  Read more... </a>
+<p>His <a href="{% url 'research' %}">  research </a> focuses on violence, collective action, and race.
+    
 </p>
 
-<p>His research focuses on violence, collective action, and race.
-    <a href="{% url 'research' %}">  Read more... </a>
-</p>
-
-<p>Misc:
+<p>Posts grouped by topic:
         <a href="{% url 'misc' %}">  Read more... </a>
-    </p>
+    </p> -->
 
 {% endblock content %}

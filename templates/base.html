@@ -1,11 +1,14 @@
+{% load static %}
 <!DOCTYPE html>
+
 <html>
 <head>
   <meta charset="utf-8">
   <title>{% block title %}Bradley Holland{% endblock title %}</title>
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
 </head>
 <body>
-  <p>Bradley Holland</p>
+  <!-- <h1>Bradley Holland</h1> -->
   <main>
     {% block content %}
     {% endblock content %}
