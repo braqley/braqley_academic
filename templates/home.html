@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
 
 {% block title %}Home{% endblock title %}
 
@@ -16,20 +17,11 @@
     cv</a> and contact him at holland [dot] 
     415 [at] osu [dot] edu.
 </p>
+<p>
+    <img src ="{% static 'images/me_animate_060519a.gif' %}" alt = "title" class ="align-center" />
+</p>
 </div>
 
 
-
-<!--  <p>He teaches <a href="{% url 'courses' %}">  courses</a> on crime, justice, and politics at the University of Hawaii at Hilo.
-    
-</p>
-
-<p>His <a href="{% url 'research' %}">  research </a> focuses on violence, collective action, and race.
-    
-</p>
-
-<p>Posts grouped by topic:
-        <a href="{% url 'misc' %}">  Read more... </a>
-    </p> -->
 
 {% endblock content %}
