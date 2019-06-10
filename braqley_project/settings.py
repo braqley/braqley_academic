@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     # Third party
     'crispy_forms',
+    'markdownx',
 
     # Local 
     'users',
@@ -141,3 +142,5 @@ LOGOUT_REDIRECT_URL = 'home'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+
