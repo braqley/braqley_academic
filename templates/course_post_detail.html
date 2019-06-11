@@ -1,10 +1,5 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="post-entry">
-    <p>{{ article.formatted_markdown|safe }}</p>
-  </div>
-
-  <!-- <p><a href="{% url 'post_edit' post.pk %}">Edit</a> | <a href="{% url 'post_delete' post.pk %}">Delete</a></p> -->
-  <!-- <p>Back to <a href="{% url 'post_list' %}">All Posts</a>.</p> -->
+<p>{{ object.formatted_markdown|safe }}</p>
 {% endblock content %}

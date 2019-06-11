@@ -4,6 +4,7 @@ from django.db import models
 from django.urls import reverse
 from markdownx.models import MarkdownxField
 from markdownx.utils import markdownify
+from markdownx.admin import MarkdownxModelAdmin
 
 
 class Post(models.Model):
@@ -34,11 +35,12 @@ class CoursePost(models.Model):
 
     @property
     def formatted_markdown(self):
-        return markdownify(self.text)
+        return markdownify(self.body)
 
     def __str__(self):
         return self.title
 
     def get_absolute_url(self):
         return reverse('post_detail', args=[str(self.id)])
-    
+
+

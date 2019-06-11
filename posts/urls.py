@@ -1,23 +1,39 @@
 from django.urls import path
 
 from .views import (
-    PostListView,
-    PostUpdateView,
-    PostDetailView,
-    PostDeleteView,
-    PostCreateView,
-    CoursePostListView,
+#     PostListView,
+#     PostUpdateView,
+#     PostDetailView,
+#     PostDeleteView,
+#     PostCreateView,
+#     CoursePostListView,
+#     CoursePostUpdateView,
+    CoursePostDetailView,
+#     CoursePostDeleteView,
     CoursePostCreateView
-    
+        
 )
 
 urlpatterns = [
-    path('<int:pk>/edit/',
-         PostUpdateView.as_view(), name='post_edit'),
     path('<int:pk>/',
-         PostDetailView.as_view(), name='post_detail'),
-    path('<int:pk>/delete/',
-         PostDeleteView.as_view(), name='post_delete'),
+         CoursePostDetailView.as_view(), name='post_detail'),
+#     path('<int:pk>/edit/',
+#          CoursePostUpdateView.as_view(), name='post_edit'),
+#     path('<int:pk>/delete/',
+#          CoursePostDeleteView.as_view(), name='post_delete'),
     path('new/', CoursePostCreateView.as_view(), name='post_new'),
-    path('', PostListView.as_view(), name='post_list'),
+#     path('', CoursePostListView.as_view(), name='post_list'),
 ]
+
+# from django.conf.urls import url
+
+# urlpatterns = [
+#     url(r'<int:pk>/$',
+#          CoursePostDetailView.as_view(), name='post_detail'),
+#     url(r'<int:pk>/edit/$',
+#          CoursePostUpdateView.as_view(), name='post_edit'),
+#     url(r'<int:pk>/delete/$',
+#          CoursePostDeleteView.as_view(), name='post_delete'),
+#     url(r'new/$', CoursePostCreateView.as_view(), name='post_new'),
+#     url(r'', CoursePostListView.as_view(), name='post_list'),
+# ]

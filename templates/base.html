@@ -1,4 +1,5 @@
 {% load static %}
+<!-- {% load staticfiles %} -->
 <!DOCTYPE html>
 
 <html>
@@ -6,12 +7,14 @@
   <meta charset="utf-8">
   <title>{% block title %}Bradley Holland{% endblock title %}</title>
   <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  <script type="text/javascript" src="{{ STATIC_URL }} /static/jquery-3.4.1.js">
+  </script> 
 </head>
 <body>
-  <!-- <h1>Bradley Holland</h1> -->
   <main>
     {% block content %}
     {% endblock content %}
   </main>
+  
 </body>
 </html>
