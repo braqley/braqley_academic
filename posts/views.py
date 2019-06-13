@@ -174,7 +174,7 @@ class Aj101Fall19PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteV
 class Aj101Fall19PostCreateView(LoginRequiredMixin, CreateView):
     model = Aj101Fall19Post
     template_name = 'course_post_new.html'
-    fields = ('title', 'body')
+    fields = ('title', 'module', 'body')
     login_url = 'login'
 
     def form_valid(self, form):

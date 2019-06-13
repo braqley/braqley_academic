@@ -53,7 +53,7 @@ class CoursePost(models.Model):
 
 
 class Aj101Fall19Post(models.Model):
-    MODULES = [("1", "1"), ("2", "2"), ("3", "3"), ("4", "4"), ("5", "5"), ("6", "6"), ("7", "7")]
+    MODULES = [("Intro", "Intro"), ("1", "1"), ("2", "2"), ("3", "3"), ("4", "4"), ("5", "5"), ("6", "6"), ("7", "7")]
 
     title = models.CharField(max_length=255)
     module = models.CharField(max_length=255, choices = MODULES)
