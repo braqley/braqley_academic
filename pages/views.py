@@ -9,11 +9,11 @@ from posts.models import Post
 class HomePageView(TemplateView):
     template_name = 'home.html'
 
-class AboutPageView(TemplateView):
-    template_name = 'about.html'
+class Aj101Fall2019(TemplateView):
+    template_name = 'aj101_fall2019.html'
 
-class ResearchPageView(TemplateView):
-    template_name = 'research.html'
+class Ps324Fall2019(TemplateView):
+    template_name = 'ps324_fall2019.html'
 
 class CoursesPageView(TemplateView):
     template_name = 'courses.html'

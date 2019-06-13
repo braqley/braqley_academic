@@ -3,7 +3,7 @@ from django.views.generic import ListView, DetailView
 from django.views.generic.edit import UpdateView, DeleteView, CreateView
 from django.urls import reverse_lazy
 
-from .models import Post, CoursePost
+from .models import Post, CoursePost, Aj101Fall19Post
 
 
 
@@ -64,7 +64,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
-##################
+#######CoursePosts###########
 
 class CoursePostListView(LoginRequiredMixin, ListView):
     model = CoursePost
@@ -114,6 +114,65 @@ class CoursePostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
 class CoursePostCreateView(LoginRequiredMixin, CreateView):
     model = CoursePost
+    template_name = 'course_post_new.html'
+    fields = ('title', 'body')
+    login_url = 'login'
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
+
+#######Aj101Fall19Posts###########
+
+class Aj101Fall19PostListView(LoginRequiredMixin, ListView):
+    model = Aj101Fall19Post
+    template_name = 'course_post_list.html'
+    login_url = 'login'
+
+
+class Aj101Fall19PostDetailView(LoginRequiredMixin, DetailView):
+    model = Aj101Fall19Post
+    template_name = 'course_post_detail.html'
+    login_url = 'login'
+
+
+class Aj101Fall19PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    model = Aj101Fall19Post
+    fields = ('title', 'body',)
+    template_name = 'course_post_edit.html'
+    login_url = 'login'
+
+    def test_func(self):
+        obj = self.get_object()
+        return obj.author == self.request.user
+
+    # def dispatch(self, request, *args, **kwargs):
+    #     obj = self.get_object()
+    #     if obj.author != self.request.user:
+    #         raise PermissionDenied
+    #     return super().dispatch(request, *args, **kwargs)
+
+
+class Aj101Fall19PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    model = Aj101Fall19Post
+    template_name = 'course_post_delete.html'
+    success_url = reverse_lazy('aj101_fall2019')
+    login_url = 'login'
+
+    def test_func(self):
+        obj = self.get_object()
+        return obj.author == self.request.user
+
+    # def dispatch(self, request, *args, **kwargs):
+    #     obj = self.get_object()
+    #     if obj.author != self.request.user:
+    #         raise PermissionDenied
+    #     return super().dispatch(request, *args, **kwargs)
+
+
+class Aj101Fall19PostCreateView(LoginRequiredMixin, CreateView):
+    model = Aj101Fall19Post
     template_name = 'course_post_new.html'
     fields = ('title', 'body')
     login_url = 'login'

@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<h1>{{ object.title }}</h1>
 <p>{{ object.formatted_markdown|safe }}</p>
+
+<p><a href="{% url 'aj101_fall2019_post_edit' object.pk %}">+ Edit Post</a></p>
+<p><a href="{% url 'aj101_fall2019_post_delete' object.pk %}">+ Delete Post</a></p>
 {% endblock content %}

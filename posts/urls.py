@@ -17,12 +17,12 @@ from .views import (
 
 urlpatterns = [
     path('<int:pk>/',
-         CoursePostDetailView.as_view(), name='post_detail'),
+         CoursePostDetailView.as_view(), name='course_post_detail'),
 #     path('<int:pk>/edit/',
 #          CoursePostUpdateView.as_view(), name='post_edit'),
 #     path('<int:pk>/delete/',
 #          CoursePostDeleteView.as_view(), name='post_delete'),
-    path('new/', CoursePostCreateView.as_view(), name='post_new'),
+    path('new/', CoursePostCreateView.as_view(), name='course_post_new'),
 #     path('', CoursePostListView.as_view(), name='post_list'),
 ]
 
