@@ -14,4 +14,8 @@ urlpatterns = [
     path('aj101_fall2019/new_post/', postviews.Aj101Fall19PostCreateView.as_view(), name='aj101_fall2019_post_new'),
     path('aj101_fall2019/<int:pk>/edit_post/', postviews.Aj101Fall19PostUpdateView.as_view(), name='aj101_fall2019_post_edit'),
     path('aj101_fall2019/<int:pk>/delete_post/', postviews.Aj101Fall19PostDeleteView.as_view(), name='aj101_fall2019_post_delete'),
+    path('ps324_fall2019/<int:pk>/', postviews.Ps324Fall19PostDetailView.as_view(), name='ps324_fall2019_post_detail'),
+    path('ps324_fall2019/new_post/', postviews.Ps324Fall19PostCreateView.as_view(), name='ps324_fall2019_post_new'),
+    path('ps324_fall2019/<int:pk>/edit_post/', postviews.Ps324Fall19PostUpdateView.as_view(), name='ps324_fall2019_post_edit'),
+    path('ps324_fall2019/<int:pk>/delete_post/', postviews.Ps324Fall19PostDeleteView.as_view(), name='ps324_fall2019_post_delete'),
 ]

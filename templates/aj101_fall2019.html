@@ -6,7 +6,11 @@
 {% block content %}
 <h1>AJ 101: Introduction to Administration of Justice</h1>
 
-<a href="{% url 'aj101_fall2019_post_new' %}">+ Write a post</a>
+<p> 
+  <a href="{% url 'aj101_fall2019_post_new' %}">Write a post</a> |
+  <a href="{% url 'login' %}"> Login </a> |
+  <a href="{% url 'logout' %}"> Logout </a>
+</p>
 
 <div id = module0>
 

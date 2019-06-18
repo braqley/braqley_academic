@@ -1,10 +1,107 @@
 {% extends 'base.html' %}
 
-{% block title %}Research{% endblock title %}
+{% block title %}PS324 Fall 2019{% endblock title %}
 
 
 {% block content %}
+<h1>PS 324: Criminology</h1>
 
-<p>Research: His research focuses on violence, collective action, and race.</p>
+<p> 
+  <a href="{% url 'ps324_fall2019_post_new' %}">Write a post</a> |
+  <a href="{% url 'login' %}"> Login </a> |
+  <a href="{% url 'logout' %}"> Logout </a>
+</p>
+
+<div id = module0>
+
+<h2>Introduction to the Course</h2>
+<p>Here's what to expect...</p>
+{% lorem 3 p %}
+
+{% for post in view.intro_posts %}
+  <ul>
+    <li>{{ post.author }} on <a href="{% url 'ps324_fall2019_post_detail' post.pk %}"> {{ post.title }}</a> </li>
+  </ul>
+{% endfor %}
+
+</div><!-- end of module0 -->
+
+<div id = module1>
+  <h2>Module 1: topic</h2>
+  {% lorem 3 p %}
+
+{% for post in view.mod1_posts %}
+  <ul>
+    <li>{{ post.author }} on <a href="{% url 'ps324_fall2019_post_detail' post.pk %}"> {{ post.title }}</a> </li>
+  </ul>
+{% endfor %}  
+</div><!-- end of module1 -->
+
+<div id = module2>
+  <h2>Module 2: topic</h2>
+  {% lorem 3 p %}
+
+{% for post in view.mod2_posts %}
+  <ul>
+    <li>{{ post.author }} on <a href="{% url 'ps324_fall2019_post_detail' post.pk %}"> {{ post.title }}</a> </li>
+  </ul>
+{% endfor %}  
+</div><!-- end of module2 -->
+
+<div id = module3>
+  <h2>Module 3: topic</h2>
+  {% lorem 3 p %}
+
+{% for post in view.mod3_posts %}
+  <ul>
+    <li>{{ post.author }} on <a href="{% url 'ps324_fall2019_post_detail' post.pk %}"> {{ post.title }}</a> </li>
+  </ul>
+{% endfor %}  
+</div><!-- end of module3 -->
+
+<div id = module4>
+  <h2>Module 4: topic</h2>
+  {% lorem 3 p %}
+
+{% for post in view.mod4_posts %}
+  <ul>
+    <li>{{ post.author }} on <a href="{% url 'ps324_fall2019_post_detail' post.pk %}"> {{ post.title }}</a> </li>
+  </ul>
+{% endfor %}  
+</div><!-- end of module4 -->
+      
+<div id = module5>
+  <h2>Module 5: topic</h2>
+  {% lorem 3 p %}
+
+{% for post in view.mod5_posts %}
+  <ul>
+    <li>{{ post.author }} on <a href="{% url 'ps324_fall2019_post_detail' post.pk %}"> {{ post.title }}</a> </li>
+  </ul>
+{% endfor %}  
+</div><!-- end of module5 -->
+
+<div id = module6>
+  <h2>Module 6: topic</h2>
+  {% lorem 3 p %}
+
+{% for post in view.mod6_posts %}
+  <ul>
+    <li>{{ post.author }} on <a href="{% url 'ps324_fall2019_post_detail' post.pk %}"> {{ post.title }}</a> </li>
+  </ul>
+{% endfor %}  
+</div><!-- end of module6 -->
+
+<div id = module7>
+  <h2>Module 7: topic</h2>
+  {% lorem 3 p %}
+
+{% for post in view.mod7_posts %}
+  <ul>
+    <li>{{ post.author }} on <a href="{% url 'ps324_fall2019_post_detail' post.pk %}"> {{ post.title }}</a> </li>
+  </ul>
+{% endfor %}  
+</div><!-- end of module7 -->
+
 
 {% endblock content %}
