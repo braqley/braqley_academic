@@ -3,11 +3,14 @@ from django.db import models
 from django.db.models import Case, CharField, Value, When
 
 class CustomUser(AbstractUser):
-    COURSE_CHOICES = [('AJ 101_FALL2019', 'AJ101 Fall 2019'), ('PS324 Fall 2019', 'PS324 Fall 2019')]
+    COURSE_CHOICES = [('AJ101 Fall 2019', 'AJ101 Fall 2019'), ('PS324 Fall 2019', 'PS324 Fall 2019')]
 
     name = models.CharField(max_length=255, default = "")
     email = models.EmailField(max_length=254, default = "")
     course = models.CharField(max_length=255, default = "", choices = COURSE_CHOICES)
+
+    def __str__(self):
+        return self.email
     
     # @property
     # def available_mods(self):

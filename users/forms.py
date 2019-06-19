@@ -10,6 +10,14 @@ class CustomUserCreationForm(UserCreationForm):
         model = CustomUser
         fields = UserCreationForm.Meta.fields + ('name', 'email', 'course',)
 
+    def signup(self, request, user):
+        user.name = self.cleaned_data['name']
+        user.email = self.cleaned_data['email']
+        user.course = self.cleaned_data['course']
+        user.save()
+
+    
+
 
 class CustomUserChangeForm(UserChangeForm):
 
