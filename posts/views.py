@@ -183,7 +183,7 @@ class Aj101Fall19PostCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateV
     model = Aj101Fall19Post
     template_name = 'course_post_new.html'
     fields = ('title', 'module', 'body')
-    login_url = 'login'
+    login_url = 'account_login'
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -194,7 +194,7 @@ class Aj101Fall19PostCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateV
         return this_course == self.request.user.course or self.request.user.is_superuser
 
     def handle_no_permission(self):
-        return redirect("login")
+        return redirect("account_login")
 
 
 
@@ -258,7 +258,7 @@ class Ps324Fall19PostCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateV
     model = Ps324Fall19Post
     template_name = 'course_post_new.html'
     fields = ('title', 'module', 'body')
-    login_url = 'login'
+    login_url = 'account_login'
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -269,4 +269,4 @@ class Ps324Fall19PostCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateV
         return this_course == self.request.user.course or self.request.user.is_superuser
 
     def handle_no_permission(self):
-        return redirect("login")
+        return redirect("account_login")

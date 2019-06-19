@@ -8,7 +8,7 @@ from django.http import HttpResponseRedirect, HttpRequest
 
 class SignUpView(CreateView):
     form_class = CustomUserCreationForm
-    success_url = reverse_lazy('login')
+    success_url = reverse_lazy('account_login')
     template_name = 'signup.html'
 
 
@@ -22,6 +22,6 @@ def login_success(request):
 
 
 def logout_success(request):
-    return redirect("login")
+    return redirect("account_login")
     #for remaining on page:
     # return redirect(request.META['HTTP_REFERER'])

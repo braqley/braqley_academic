@@ -6,11 +6,23 @@
 {% block content %}
 <h1>PS 324: Criminology</h1>
 
-<p> 
+{% if user.is_authenticated and user.course == "PS324 Fall 2019" %}
+<p> Hi {{ user.name }}! </p>
+<p>
   <a href="{% url 'ps324_fall2019_post_new' %}">Write a post</a> |
-  <a href="{% url 'login' %}"> Login </a> |
-  <a href="{% url 'logout' %}"> Logout </a>
-</p>
+  <a href="{% url 'account_logout' %}">Log Out</a></p>
+{% else %}
+  <p>
+  <a href="{% url 'account_login' %}">Log In</a> 
+  | <a href="{% url 'account_signup' %}">Sign Up</a> </p>
+{% endif %}
+
+
+<!-- <p> 
+  <a href="{% url 'ps324_fall2019_post_new' %}">Write a post</a> |
+  <a href="{% url 'account_login' %}"> Login </a> |
+  <a href="{% url 'account_logout' %}"> Logout </a>
+</p> -->
 
 <div id = module0>
 
