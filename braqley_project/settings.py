@@ -191,3 +191,4 @@ ACCOUNT_SIGNUP_FORM_CLASS = 'users.forms.CustomUserCreationForm'
 ACCOUNT_AUTHENTICATED_LOGIN_REDIRECTS = False
 ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True
 ACCOUNT_LOGOUT_REDIRECT_URL = 'logout_success'
+ACCOUNT_ADAPTER = 'braqley_project.adapter.RestrictEmailAdapter'
