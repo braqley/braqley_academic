@@ -5,6 +5,7 @@ from django.urls import reverse
 from markdownx.models import MarkdownxField
 from markdownx.utils import markdownify
 from markdownx.admin import MarkdownxModelAdmin
+from multiselectfield import MultiSelectField
 
 from users.models import CustomUser
 
@@ -55,6 +56,14 @@ class CoursePost(models.Model):
 class Aj101Fall19Post(models.Model):
     MODULES = [("Intro", "Intro"), ("1", "1"), ("2", "2"), ("3", "3"), ("4", "4"), ("5", "5"), ("6", "6"), ("7", "7")]
 
+    COAUTHOR_CHOICES = []
+    student_list = CustomUser.objects.filter(course= "AJ101 Fall 2019")
+    for i in student_list:
+        n = i.name
+        name_tup = (f"{n}", f"{n}") 
+        COAUTHOR_CHOICES.append(name_tup)
+    
+
     title = models.CharField(max_length=255)
     module = models.CharField(max_length=255, choices = MODULES)
     body = MarkdownxField()
@@ -63,6 +72,7 @@ class Aj101Fall19Post(models.Model):
         get_user_model(),
         on_delete=models.CASCADE,
     )
+    coauthors = MultiSelectField(choices = COAUTHOR_CHOICES, default = "")
 
     @property
     def formatted_markdown(self):
@@ -78,6 +88,13 @@ class Aj101Fall19Post(models.Model):
 class Ps324Fall19Post(models.Model):
     MODULES = [("Intro", "Intro"), ("1", "1"), ("2", "2"), ("3", "3"), ("4", "4"), ("5", "5"), ("6", "6"), ("7", "7")]
 
+    COAUTHOR_CHOICES = []
+    student_list = CustomUser.objects.filter(course= "PS324 Fall 2019")
+    for i in student_list:
+        n = i.name
+        name_tup = (f"{n}", f"{n}") 
+        COAUTHOR_CHOICES.append(name_tup)
+
     title = models.CharField(max_length=255)
     module = models.CharField(max_length=255, choices = MODULES)
     body = MarkdownxField()
@@ -86,6 +103,7 @@ class Ps324Fall19Post(models.Model):
         get_user_model(),
         on_delete=models.CASCADE,
     )
+    coauthors = MultiSelectField(choices = COAUTHOR_CHOICES, default = "")
 
     @property
     def formatted_markdown(self):

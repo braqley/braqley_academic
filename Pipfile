@@ -10,6 +10,7 @@ django = "*"
 django-crispy-forms = "*"
 django-markdownx = "*"
 django-allauth = "*"
+django-multiselectfield = "*"
 
 [requires]
 python_version = "3.6"

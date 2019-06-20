@@ -25,7 +25,7 @@
 
 {% for post in view.intro_posts %}
   <ul>
-    <li>{{ post.author }} on <a href="{% url 'aj101_fall2019_post_detail' post.pk %}"> {{ post.title }}</a> </li>
+    <li>{{ post.coauthors }} on <a href="{% url 'aj101_fall2019_post_detail' post.pk %}"> {{ post.title }}</a> </li>
   </ul>
 {% endfor %}
 
@@ -37,7 +37,7 @@
 
 {% for post in view.mod1_posts %}
   <ul>
-    <li>{{ post.author }} on <a href="{% url 'aj101_fall2019_post_detail' post.pk %}"> {{ post.title }}</a> </li>
+    <li>{{ post.coauthors }} on <a href="{% url 'aj101_fall2019_post_detail' post.pk %}"> {{ post.title }}</a> </li>
   </ul>
 {% endfor %}  
 </div><!-- end of module1 -->
@@ -48,7 +48,7 @@
 
 {% for post in view.mod2_posts %}
   <ul>
-    <li>{{ post.author }} on <a href="{% url 'aj101_fall2019_post_detail' post.pk %}"> {{ post.title }}</a> </li>
+    <li>{{ post.coauthors }} on <a href="{% url 'aj101_fall2019_post_detail' post.pk %}"> {{ post.title }}</a> </li>
   </ul>
 {% endfor %}  
 </div><!-- end of module2 -->
@@ -59,7 +59,7 @@
 
 {% for post in view.mod3_posts %}
   <ul>
-    <li>{{ post.author }} on <a href="{% url 'aj101_fall2019_post_detail' post.pk %}"> {{ post.title }}</a> </li>
+    <li>{{ post.coauthors }} on <a href="{% url 'aj101_fall2019_post_detail' post.pk %}"> {{ post.title }}</a> </li>
   </ul>
 {% endfor %}  
 </div><!-- end of module3 -->
@@ -70,7 +70,7 @@
 
 {% for post in view.mod4_posts %}
   <ul>
-    <li>{{ post.author }} on <a href="{% url 'aj101_fall2019_post_detail' post.pk %}"> {{ post.title }}</a> </li>
+    <li>{{ post.coauthors }} on <a href="{% url 'aj101_fall2019_post_detail' post.pk %}"> {{ post.title }}</a> </li>
   </ul>
 {% endfor %}  
 </div><!-- end of module4 -->
@@ -81,7 +81,7 @@
 
 {% for post in view.mod5_posts %}
   <ul>
-    <li>{{ post.author }} on <a href="{% url 'aj101_fall2019_post_detail' post.pk %}"> {{ post.title }}</a> </li>
+    <li>{{ post.coauthors }} on <a href="{% url 'aj101_fall2019_post_detail' post.pk %}"> {{ post.title }}</a> </li>
   </ul>
 {% endfor %}  
 </div><!-- end of module5 -->
@@ -92,7 +92,7 @@
 
 {% for post in view.mod6_posts %}
   <ul>
-    <li>{{ post.author }} on <a href="{% url 'aj101_fall2019_post_detail' post.pk %}"> {{ post.title }}</a> </li>
+    <li>{{ post.coauthors }} on <a href="{% url 'aj101_fall2019_post_detail' post.pk %}"> {{ post.title }}</a> </li>
   </ul>
 {% endfor %}  
 </div><!-- end of module6 -->
@@ -103,7 +103,7 @@
 
 {% for post in view.mod7_posts %}
   <ul>
-    <li>{{ post.author }} on <a href="{% url 'aj101_fall2019_post_detail' post.pk %}"> {{ post.title }}</a> </li>
+    <li>{{ post.coauthors }} on <a href="{% url 'aj101_fall2019_post_detail' post.pk %}"> {{ post.title }}</a> </li>
   </ul>
 {% endfor %}  
 </div><!-- end of module7 -->

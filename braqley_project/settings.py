@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'markdownx',
     'allauth', 
     'allauth.account', 
-    'allauth.socialaccount', 
+    'allauth.socialaccount',
+    'multiselectfield',
 
     # Local 
     # 'users.apps.UsersConfig',

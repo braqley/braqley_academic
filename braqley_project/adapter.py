@@ -1,6 +1,5 @@
 from allauth.account.adapter import DefaultAccountAdapter
 from django.forms import ValidationError
-# from static import toy_email_list
 
 import csv
 
@@ -13,9 +12,8 @@ with open('static/toy_email_list.csv') as f:
 
 class RestrictEmailAdapter(DefaultAccountAdapter):
 
-
     def clean_email(self,email):
         RestrictedList = authorized_emails
         if email not in RestrictedList:
-            raise ValidationError('You are restricted from registering. Please contact admin.')
+            raise ValidationError('You must be enrolled in the class to sign up.')
         return email
